@@ -14,65 +14,70 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<title>YOGO</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- jQuery -->
+	<script src="/js/jquery.min.js"></script>
 	<!-- Angular -->
 	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.6.0/angular.min.js"></script>
 	<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-route.js"></script>
 	<script>
 		var app = angular.module("myApp", ["ngRoute"]);
 		app.config(function($routeProvider) {
-					$routeProvider
-						.when("/", {
-							templateUrl: "index.htm"
-						})
-						.when("/vacation", {
-							templateUrl: "vacation.htm"
-						})
-						.when("/studios", {
-							templateUrl: "studios.htm"
-						})
-						.when("/classes", {
-							templateUrl: "classes.htm"
-						})
-						.when("/teachers", {
-							templateUrl: "teachers.htm"
-						})
-						.when("/blog", {
-							templateUrl: "blog.htm"
-						})
-						.when("/signin", {
-							templateUrl: "/public/js/auth.htm"
-						});
+			$routeProvider
+				.when("/", {
+					templateUrl: "index.htm"
+				})
+				.when("/vacation", {
+					templateUrl: "vacation.htm"
+				})
+				.when("/studios", {
+					templateUrl: "studios.htm"
+				})
+				.when("/classes", {
+					templateUrl: "classes.htm"
+				})
+				.when("/teachers", {
+					templateUrl: "teachers.htm"
+				})
+				.when("/blog", {
+					templateUrl: "blog.htm"
+				})
+				.when("/signin", {
+					templateUrl: "/HTML/auth.html"
+				})
+				.when("/login", {
+					templateUrl: "HTML/dashboard.htm"
+				});
+		})
 	</script>
+
 	<!-- Google Maps API -->
-	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCdgxRRke4gBNYM6lfBd0gFD5soYr7QKT8">
-	</script>
-	<!-- jQuery -->
-	<script src="jquery.min.js"></script>
+
+	<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCdgxRRke4gBNYM6lfBd0gFD5soYr7QKT8&libraries=places"></script>
 	<!-- jQuery Easing -->
-	<script src="jquery.easing.1.3.js"></script>
+	<script src="/js/jquery.easing.1.3.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.js"></script>
 	<!-- Bootstrap -->
-	<script src="bootstrap.min.js"></script>
+	<script src="/js/bootstrap.min.js"></script>
 	<!-- Waypoints -->
-	<script src="jquery.waypoints.min.js"></script>
-	<script src="sticky.js"></script>
+	<script src="/js/jquery.waypoints.min.js"></script>
+	<script src="/js/sticky.js"></script>
 
 	<!-- Stellar -->
-	<script src="js/jquery.stellar.min.js"></script>
+	<script src="/js/jquery.stellar.min.js"></script>
 	<!-- Superfish -->
-	<script src="hoverIntent.js"></script>
-	<script src="superfish.js"></script>
+	<script src="/js/hoverIntent.js"></script>
+	<script src="/js/superfish.js"></script>
 	<!-- Magnific Popup -->
-	<script src="js/jquery.magnific-popup.min.js"></script>
-	<script src="js/magnific-popup-options.js"></script>
+	<script src="/js/jquery.magnific-popup.min.js"></script>
+	<script src="/js/magnific-popup-options.js"></script>
 	<!-- Date Picker -->
-	<script src="js/bootstrap-datepicker.min.js"></script>
+	<script src="/js/bootstrap-datepicker.min.js"></script>
 	<!-- CS Select -->
-	<script src="js/classie.js"></script>
-	<script src="js/selectFx.js"></script>
+	<script src="/js/classie.js"></script>
+	<script src="/js/selectFx.js"></script>
 
 	<!-- Main JS -->
-	<script src="main.js"></script>
+	<script src="/js/main.js"></script>
 
 	<!-- 
 	//////////////////////////////////////////////////////
@@ -119,25 +124,25 @@
 	<meta name="theme-color" content="#ffffff">
 
 	<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700,300' rel='stylesheet' type='text/css'>
-	<link rel="stylesheet" href="css/bootstrap.css">
+	<link rel="stylesheet" href="/css/bootstrap.css">
 
 	<!-- Animate.css -->
-	<link rel="stylesheet" href="animate.css">
+	<link rel="stylesheet" href="/css/animate.css">
 	<!-- Icomoon Icon Fonts-->
-	<link rel="stylesheet" href="icomoon.css">
+	<link rel="stylesheet" href="/css/icomoon.css">
 	<!-- Bootstrap  -->
-	<link rel="stylesheet" href="bootstrap.css">
+	<link rel="stylesheet" href="/css/bootstrap.css">
 	<!-- Superfish -->
-	<link rel="stylesheet" href="superfish.css">
+	<link rel="stylesheet" href="/css/superfish.css">
 	<!-- Magnific Popup -->
-	<link rel="stylesheet" href="magnific-popup.css">
+	<link rel="stylesheet" href="/css/magnific-popup.css">
 	<!-- Date Picker -->
-	<link rel="stylesheet" href="bootstrap-datepicker.min.css">
+	<link rel="stylesheet" href="/css/bootstrap-datepicker.min.css">
 	<!-- CS Select -->
-	<link rel="stylesheet" href="cselect.css">
-	<link rel="stylesheet" href="csskinborder.css">
+	<link rel="stylesheet" href="/css/cselect.css">
+	<link rel="stylesheet" href="/css/csskinborder.css">
 
-	<link rel="stylesheet" href="style.css">
+	<link rel="stylesheet" href="/css/style.css">
 
 	<!-- Modernizr JS -->
 	<!--<script src="modernizr-2.6.2.min.js"></script>-->
@@ -166,14 +171,13 @@
 									<ul class="fh5co-sub-menu">
 										<li><a href="#">Domestic</a></li>
 										<li><a href="#">International</a></li>
-
 									</ul>
 								</li>
-								<li><a href="studios.html">Studios</a></li>
-								<li><a href="classes.html">Classes</a></li>
-								<li><a href="teachers.html">Teachers</a></li>
-								<li><a href="blog.html">Blog</a></li>
-								<li><a href="public/auth.html"><i class="icon-pencil"><font color="#2d969b"></i>  Sign In</a></li>
+								<li><a href="/HTML/studios.html">Studios</a></li>
+								<li><a href="/HTML/classes.html">Classes</a></li>
+								<li><a href="HTML/teachers.html">Teachers</a></li>
+								<li><a href="HTML/blog.html">Blog</a></li>
+								<li><a href="/HTML/auth.html"><i class="icon-pencil"><font color="#2d969b"></i>  Sign In</a></li>
 							</ul>
 						</nav>
 					</div>
@@ -181,9 +185,7 @@
 		</div>
 	</div>
 	</header>
-
 	<!-- end:header-top -->
-
 	<div class="fh5co-hero">
 		<div class="fh5co-overlay"></div>
 		<div class="fh5co-cover" data-stellar-background-ratio="0.5" style="background-image: url(images/images/rocks.jpg);">
@@ -192,41 +194,44 @@
 					<div class="row">
 						<div class="col-sm-5 col-md-5">
 							<div class="tabulation animate-box">
-
 								<!-- Nav tabs -->
 								<ul class="nav nav-tabs" role="tablist">
 									<li role="presentation" class="active">
-										<a href="#flights" aria-controls="flights" role="tab" data-toggle="tab">Find a Class</a>
+										<a href="#flights" aria-controls="flights" role="tab" data-toggle="tab">Find a Studio</a>
 									</li>
 									<li role="presentation">
-										<a href="#hotels" aria-controls="hotels" role="tab" data-toggle="tab">Find a Teacher</a>
+										<a href="#hotels" aria-controls="hotels" role="tab" data-toggle="tab">Find a Class</a>
 									</li>
 									<li role="presentation">
-										<a href="#packages" aria-controls="packages" role="tab" data-toggle="tab">Find a Studio</a>
+										<a href="#packages" aria-controls="packages" role="tab" data-toggle="tab">Find a Teacher</a>
 									</li>
 								</ul>
-
-
 								<!-- Tab panes -->
 								<div class="tab-content">
 									<div role="tabpanel" class="tab-pane active" id="flights">
 										<div class="row">
 											<div class="col-xxs-12 col-xs-6 mt">
 												<div class="input-field">
-													<label for="from">Min Miles:</label>
-													<input type="text" class="form-control" id="from-place" placeholder="1 Mile" />
+													<label for="zip">Enter Your Zip Code:</label>
+													<input type="text" class="form-control" id="from-place" placeholder="xxxxx" />
 												</div>
 											</div>
 											<div class="col-xxs-12 col-xs-6 mt">
 												<div class="input-field">
-													<label for="from">Max Miles:</label>
-													<input type="text" class="form-control" id="to-place" placeholder="5 Miles" />
+													<label for="from">Max Miles:</label> <select class="cs-select cs-skin-border">
+														<option value="">1 mile</option>
+														<option value="economy">5 miles</option>
+															<option value="first">10 miles</option>
+														<option value="first">15 miles</option>
+													</select>
+
+													<!-- <input type="text" class="form-control" id="to-place" placeholder="5 Miles" /> -->
 												</div>
 											</div>
-											<div class="col-xxs-12 col-xs-6 mt alternate">
+											<!--		<div class="col-xxs-12 col-xs-6 mt alternate">
 												<div class="input-field">
-													<label for="date-start">Start:</label>
-													<input type="text" class="form-control" id="date-start" placeholder="mm/dd/yyyy" />
+													<label for="date-start">Enter Zip Code:</label>
+													<input type="text" class="form-control" id="date-start" placeholder="zip code" />
 												</div>
 											</div>
 											<div class="col-xxs-12 col-xs-6 mt alternate">
@@ -234,20 +239,23 @@
 													<label for="date-end">End:</label>
 													<input type="text" class="form-control" id="date-end" placeholder="mm/dd/yyyy" />
 												</div>
-											</div>
+											</div> -->
 											<div class="col-sm-12 mt">
 												<section>
 													<label for="class">Style of Yoga:</label>
 													<select class="cs-select cs-skin-border">
-														<option value="" disabled selected>Anyusara</option>
+														<option value="">Anyusara</option>
 														<option value="economy">Hatha</option>
+															<option value="first">Iyengar</option>
 														<option value="first">Kundalini</option>
+															<option value="first">Power</option>
+														<option value="first">Vinyasa</option>
 														<option value="business">Yin</option>
 													</select>
 												</section>
 											</div>
 											<div class="col-xxs-12 col-xs-6 mt">
-												<section>
+												<!--	<section>
 													<label for="class">Adult:</label>
 													<select class="cs-select cs-skin-border">
 														<option value="" disabled selected>1</option>
@@ -268,14 +276,13 @@
 														<option value="3">3</option>
 														<option value="4">4</option>
 													</select>
-												</section>
+												</section> -->
 											</div>
 											<div class="col-xs-12">
 												<button type="submit" class="btn btn-primary btn-block" ng-click="openMap()">Search for Yoga</button>
 											</div>
 										</div>
 									</div>
-
 									<div role="tabpanel" class="tab-pane" id="hotels">
 										<div class="row">
 											<div class="col-xxs-12 col-xs-12 mt">
@@ -336,7 +343,6 @@
 											</div>
 										</div>
 									</div>
-
 									<div role="tabpanel" class="tab-pane" id="Studios">
 										<div class="row">
 											<div class="col-xxs-12 col-xs-6 mt">
@@ -403,7 +409,6 @@
 										</div>
 									</div>
 								</div>
-
 							</div>
 						</div>
 						<div class="desc2 animate-box">
@@ -663,7 +668,7 @@
 				</p>
 
 
-				<p>Copyright Christine Cody 2016</p>
+				<p>Copyright Christine Cody 2017</p>
 			</div>
 		</div>
 	</div>
@@ -688,6 +693,22 @@
 			<div class="modal-dialog modal-lg" role="document">
 				<div class="modal-content">
 					<div style="height:400px;" id="map-canvas"></div>
+					<div class="modal-body">
+						<div class="row">
+							<div class="col-md-3">
+								<p>Closest Studios:</p>
+							</div>
+							<div class="col-md-3">
+								<p>1st Studio</p>
+							</div>
+							<div class="col-md-3">
+								<p>2nd Studio</p>
+							</div>
+							<div class="col-md-3">
+								<p>3rd Studio</p>
+							</div>
+						</div>
+					</div>
 					<button data-dismiss="modal">Close</button>
 				</div>
 			</div>
@@ -704,15 +725,28 @@
 
 		app.controller('MyCtrl', MyCtrlFunction);
 
-		function MyCtrlFunction($scope) {
+		function MyCtrlFunction($scope, $http) {
 			$scope.showingMap = false; // don't show modal on load
 
 
 			$scope.openMap = function() {
-				jQuery.noConflict();
+				// 				jQuery.noConflict();
 				$("#mapmodal").modal('toggle');
-				setTimeout(initMap, 200);
+// 				setTimeout(initMap, 200);
 				$scope.showingMap = true;
+				$http.post('/searchYoga')
+					.then(function(resp) {
+						initMap()
+						$scope.results = resp.data;
+						console.log('data', resp.data)
+						
+	//					$scope.results=[];
+	//									
+	//					angular.forEach(results, function(Lat, Lng) {
+	//					$scope.results.push();
+	//			}
+		
+					})
 			}
 
 			$scope.closeMap = function() {
@@ -720,6 +754,7 @@
 			}
 
 			function initMap() {
+				
 				// if HTML DOM Element that contains the map is found...
 				if (document.getElementById('map-canvas')) {
 					// Coordinates to center the map
@@ -731,13 +766,24 @@
 						center: myLatlng,
 						mapTypeId: google.maps.MapTypeId.ROADMAP
 					};
+					$scope.map = new google.maps.Map(document.getElementById("map-canvas"), mapOptions);
+					
+					var marker = new google.maps.Marker({
+          position: myLatLng,
+          map: ROADMAP,
+          title: 'Studio 1'
+        });
+					
+
+					
+					});
 
 					// Attach a map to the DOM Element, with the defined settings
-					var map = new google.maps.Map(document.getElementById("map-canvas"), mapOptions);
 				}
 
 			}
 		}
 	</script>
 </body>
+
 </html>

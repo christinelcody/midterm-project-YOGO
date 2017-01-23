@@ -25,7 +25,7 @@ function Auth($http) { // window.Auth
         success: function(res) { // server response callback
             // when login is successful, redirect them into the dashboard
             console.info('auth.login.success', res.data);
-            location.href = '/dashboard.html';
+            location.href = '/HTML/dashboard.html';
         },
         error: function(err) {
             console.error('Login.error', err);
