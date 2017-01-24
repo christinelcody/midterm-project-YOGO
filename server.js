@@ -21,7 +21,7 @@ var express = require('express'),
             secure: false         // when true, cookie will only be read when sent over HTTPS
         }
     }), // encrypted cookies!
-    PORT = process.env.PORT || 8080,
+    PORT = process.env.PORT || 80,
     Routes = require('./routes'),
     app = express();
 
