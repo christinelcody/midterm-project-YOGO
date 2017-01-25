@@ -747,11 +747,16 @@
 						$scope.results = resp.data;
 						console.log('data', resp.data)
 						
-	//					$scope.results=[];
-	//									
-	//					angular.forEach(results, function(Lat, Lng) {
-	//					$scope.results.push();
-	//			})
+						$scope.results=[];
+										
+						$scope.results.forEach(function((studio) {
+								new google.maps.marker({
+								map: $scope.map
+								position: {
+										Lat: studio.coords[0]
+										Lng: studio.coords[1]
+				};
+				})
 		
 					})
 			}
@@ -770,7 +775,7 @@
 					// Other options for the map
 					var mapOptions = {
 						zoom: 14,
-						center: myLatlng,
+						center: myLatLng,
 						mapTypeId: google.maps.MapTypeId.ROADMAP
 					};
 					$scope.map = new google.maps.Map(document.getElementById("map-canvas"), mapOptions);
