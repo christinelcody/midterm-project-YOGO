@@ -218,8 +218,8 @@
 											</div>
 											<div class="col-xxs-12 col-xs-6 mt">
 												<div class="input-field">
-									
-													<label for="from">Max Miles:</label> 
+
+													<label for="from">Max Miles:</label>
 													<select class="cs-select cs-skin-border">
 		
 														<option value="">1 mile</option>
@@ -705,8 +705,8 @@
 							<div class="col-md-3">
 								<p>1st Studio</p>
 								<br>Yoga Pod</br>
-							<br>1750 29th St.</br>
-						<br>Boulder, CO 80301</br>
+								<br>1750 29th St.</br>
+								<br>Boulder, CO 80301</br>
 							</div>
 							<div class="col-md-3">
 								<p>2nd Studio</p>
@@ -737,60 +737,60 @@
 
 
 			$scope.openMap = function() {
-				// 				jQuery.noConflict();
-				$("#mapmodal").modal('toggle');
-// 				setTimeout(initMap, 200);
-				$scope.showingMap = true;
-				$http.post('/searchYoga')
-					.then(function(resp) {
-						initMap()
-						$scope.results = resp.data;
-						console.log('data', resp.data)
-						
-						$scope.results=[];
-										
-						$scope.results.forEach(function(studio) {
-								new google.maps.marker({
-								map: $scope.map,
-								position: {
-										lat: studio.coords[0],
-										lng: studio.coords[1]
-				}
-				})
-		
-					})
-			}
+					// 				jQuery.noConflict();
+					$("#mapmodal").modal('toggle');
+					// 				setTimeout(initMap, 200);
+					$scope.showingMap = true;
+					$http.post('/searchYoga')
+						.then(function(resp) {
+								initMap()
+								$scope.results = resp.data;
+								console.log('data', resp.data)
 
-			$scope.closeMap = function() {
-				$scope.showingMap = false;
-			}
+								$scope.results = [];
 
-			function initMap() {
-				
-				// if HTML DOM Element that contains the map is found...
-				if (document.getElementById('map-canvas')) {
-					// Coordinates to center the map
-					var myLatlng = new google.maps.LatLng(40.022764, -105.252317);
+								$scope.results.forEach(function(studio) {
+									new google.maps.marker({
+										map: $scope.map,
+										position: {
+											lat: studio.coords[0],
+											lng: studio.coords[1]
+										}
+									})
 
-					// Other options for the map
-					var mapOptions = {
-						zoom: 14,
-						center: myLatLng,
-						mapTypeId: google.maps.MapTypeId.ROADMAP
-					};
-					$scope.map = new google.maps.Map(document.getElementById("map-canvas"), mapOptions);
-					
-					var marker = new google.maps.Marker({
-          position: myLatLng,
-          map: ROADMAP,
-          title: 'Studio 1'
-        });
+								})
+							})
 
-					// Attach a map to the DOM Element, with the defined settings
-				}
+							$scope.closeMap = function() {
+								$scope.showingMap = false;
+							}
 
-			}
-		}
+							function initMap() {
+
+								// if HTML DOM Element that contains the map is found...
+								if (document.getElementById('map-canvas')) {
+									// Coordinates to center the map
+									var myLatlng = new google.maps.LatLng(40.022764, -105.252317);
+
+									// Other options for the map
+									var mapOptions = {
+										zoom: 14,
+										center: myLatLng,
+										mapTypeId: google.maps.MapTypeId.ROADMAP
+									};
+									$scope.map = new google.maps.Map(document.getElementById("map-canvas"), mapOptions);
+
+									var marker = new google.maps.Marker({
+										position: myLatLng,
+										map: ROADMAP,
+										title: 'Studio 1'
+									});
+
+									// Attach a map to the DOM Element, with the defined settings
+								}
+
+							}
+						}
 	</script>
 </body>
 
