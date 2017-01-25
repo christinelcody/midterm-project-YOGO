@@ -736,12 +736,13 @@
 	$scope.openMap = function() {
 		// 				jQuery.noConflict();
 		$("#mapmodal").modal('toggle');
-		// 				setTimeout(initMap, 200);
 		$scope.showingMap = true;
 		$http.post('/searchYoga')
 			.then(function(resp) {
 				console.log('init....')
-				initMap()
+// 				initMap()
+						setTimeout(initMap, 200);
+				
 				$scope.results = resp.data;
 				console.log('data', resp.data)
 
