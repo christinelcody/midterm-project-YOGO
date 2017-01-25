@@ -732,6 +732,7 @@
 		function MyCtrlFunction($scope, $http) {
 	$scope.showingMap = false; // don't show modal on load
 
+				initMap()
 
 	$scope.openMap = function() {
 		// 				jQuery.noConflict();
@@ -740,7 +741,6 @@
 		$http.post('/searchYoga')
 			.then(function(resp) {
 				console.log('init....')
-				initMap()
 				
 				$scope.results = resp.data;
 				console.log('data', resp.data)
