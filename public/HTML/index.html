@@ -685,7 +685,7 @@
 
 	<!--Map-->
 
-	<div ng-app="MyApp" ng-controller="MyCtrl">
+	<div >
 		<div class="panel-heading">
 			<i class="panel-title-icon fa fa-tasks"></i>
 			<div class="panel-heading-controls">
@@ -732,11 +732,12 @@
 		function MyCtrlFunction($scope, $http) {
 	$scope.showingMap = false; // don't show modal on load
 
-				initMap()
 
 	$scope.openMap = function() {
 		// 				jQuery.noConflict();
 		$("#mapmodal").modal('toggle');
+				initMap()
+		
 		$scope.showingMap = true;
 		$http.post('/searchYoga')
 			.then(function(resp) {
@@ -745,16 +746,28 @@
 				$scope.results = resp.data;
 				console.log('data', resp.data)
 
-				$scope.results = [];
+// 				$scope.results = [];
 
 				$scope.results.forEach(function(studio) {
-					new google.maps.marker({
+					console.log($scope.map, studio.coords)
+					var marker = new google.maps.Marker({
 						map: $scope.map,
 						position: {
 							lat: studio.coords[1],
 							lng: studio.coords[0]
 						}
 					})
+					
+					console.log('MMARK', marker)
+					
+					 var infoWindowContent = '<h1>' + studio.name + '</h1> <p> ' + studio.type + ' </p>'
+						var infoWindow = new google.maps.InfoWindow({
+								content : infoWindowContent
+						})
+
+						marker.addListener('click', function(){
+								infoWindow.open($scope.map, marker)
+						})
 
 				})
 			})
@@ -767,6 +780,7 @@
 
 		// if HTML DOM Element that contains the map is found...
 		if (document.getElementById('map-canvas')) {
+			console.log('FOUND MAP')
 			// Coordinates to center the map
 			var myLatlng = new google.maps.LatLng(40.022764, -105.252317);
 
