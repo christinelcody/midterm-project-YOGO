@@ -740,8 +740,7 @@
 		$http.post('/searchYoga')
 			.then(function(resp) {
 				console.log('init....')
-// 				initMap()
-						setTimeout(initMap, 200);
+				initMap()
 				
 				$scope.results = resp.data;
 				console.log('data', resp.data)
